@@ -1,0 +1,17 @@
+logging.:
+  level:
+    org.hibernate.SQL: DEBUG
+
+spring:
+  datasource:
+    url: jdbc:mysql://bespoke-bakes.mysql.database.azure.com:3306/bespoke_bakes
+    username: kimisha
+    password: Senaly@123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
