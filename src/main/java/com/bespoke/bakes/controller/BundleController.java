@@ -25,4 +25,9 @@ public class BundleController {
     public Iterable<Bundle> getBundles() {
         return bundleService.getAllBundles();
     }
+
+    @GetMapping("/{id}")
+    public Bundle getBundleById(@PathVariable("id") Long id) {
+        return bundleService.findBundleById(id);
+    }
 }

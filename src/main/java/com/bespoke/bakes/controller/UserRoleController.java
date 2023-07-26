@@ -25,4 +25,9 @@ public class UserRoleController {
     public Iterable<UserRole> getUserRoles() {
         return userRoleService.getAllUserRoles();
     }
+
+    @GetMapping("/{id}")
+    public UserRole getUserRoleById(@PathVariable("id") Long id) {
+        return userRoleService.findUserRoleById(id);
+    }
 }

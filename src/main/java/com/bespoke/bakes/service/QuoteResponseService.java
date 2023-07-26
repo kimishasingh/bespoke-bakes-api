@@ -4,10 +4,12 @@ import com.bespoke.bakes.domain.QuoteResponse;
 import com.bespoke.bakes.repository.QuoteResponseRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class QuoteResponseService {
 
-    private QuoteResponseRepository quoteResponseRepository;
+    private final QuoteResponseRepository quoteResponseRepository;
 
     public QuoteResponseService(QuoteResponseRepository quoteResponseRepository) {
         this.quoteResponseRepository = quoteResponseRepository;
@@ -19,5 +21,10 @@ public class QuoteResponseService {
 
     public Iterable<QuoteResponse> getAllQuoteResponses() {
         return quoteResponseRepository.findAll();
+    }
+
+    public QuoteResponse findQuoteResponseById(Long id) {
+        Optional<QuoteResponse> quoteResponse = quoteResponseRepository.findById(id);
+        return quoteResponse.orElse(null);
     }
 }

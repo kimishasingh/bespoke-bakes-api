@@ -4,10 +4,12 @@ import com.bespoke.bakes.domain.RolePermission;
 import com.bespoke.bakes.repository.RolePermissionRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class RolePermissionService {
 
-    private RolePermissionRepository rolePermissionRepository;
+    private final RolePermissionRepository rolePermissionRepository;
 
     public RolePermissionService(RolePermissionRepository rolePermissionRepository) {
         this.rolePermissionRepository = rolePermissionRepository;
@@ -19,5 +21,10 @@ public class RolePermissionService {
 
     public Iterable<RolePermission> getAllRolePermissions() {
         return rolePermissionRepository.findAll();
+    }
+
+    public RolePermission findRolePermissionById(Long id) {
+        Optional<RolePermission> rolePermission = rolePermissionRepository.findById(id);
+        return rolePermission.orElse(null);
     }
 }

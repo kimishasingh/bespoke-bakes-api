@@ -25,4 +25,9 @@ public class UserCredentialController {
     public Iterable<UserCredential> getUserCredentials() {
         return userCredentialService.getAllUserCredentials();
     }
+
+    @GetMapping("/{id}")
+    public UserCredential getUserCredentialById(@PathVariable("id") Long id) {
+        return userCredentialService.findUserCredentialById(id);
+    }
 }

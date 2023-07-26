@@ -4,10 +4,12 @@ import com.bespoke.bakes.domain.Image;
 import com.bespoke.bakes.repository.ImageRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class ImageService {
 
-    private ImageRepository imageRepository;
+    private final ImageRepository imageRepository;
 
     public ImageService(ImageRepository imageRepository) {
         this.imageRepository = imageRepository;
@@ -19,5 +21,10 @@ public class ImageService {
 
     public Iterable<Image> getAllImages() {
         return imageRepository.findAll();
+    }
+
+    public Image findImageById(Long id) {
+        Optional<Image> image = imageRepository.findById(id);
+        return image.orElse(null);
     }
 }

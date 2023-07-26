@@ -25,4 +25,9 @@ public class QuoteRequestController {
     public Iterable<QuoteRequest> getQuoteRequests() {
         return quoteRequestService.getAllQuoteRequests();
     }
+
+    @GetMapping("/{id}")
+    public QuoteRequest getQuoteRequestById(@PathVariable("id") Long id) {
+        return quoteRequestService.findQuoteRequestById(id);
+    }
 }

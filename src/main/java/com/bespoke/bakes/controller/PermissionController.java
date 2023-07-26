@@ -25,4 +25,9 @@ public class PermissionController {
     public Iterable<Permission> getPermissions() {
         return permissionService.getAllPermissions();
     }
+
+    @GetMapping("/{id}")
+    public Permission getPermissionById(@PathVariable("id") Long id) {
+        return permissionService.findPermissionById(id);
+    }
 }

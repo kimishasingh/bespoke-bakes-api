@@ -25,4 +25,9 @@ public class RoleController {
     public Iterable<Role> getRoles() {
         return roleService.getAllRoles();
     }
+
+    @GetMapping("/{id}")
+    public Role getRoleById(@PathVariable("id") Long id) {
+        return roleService.findRoleById(id);
+    }
 }

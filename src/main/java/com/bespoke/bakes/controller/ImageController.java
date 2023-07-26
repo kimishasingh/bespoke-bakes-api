@@ -25,4 +25,9 @@ public class ImageController {
     public Iterable<Image> getImages() {
         return imageService.getAllImages();
     }
+
+    @GetMapping("/{id}")
+    public Image getImageById(@PathVariable("id") Long id) {
+        return imageService.findImageById(id);
+    }
 }
