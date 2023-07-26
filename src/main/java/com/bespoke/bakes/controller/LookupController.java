@@ -12,9 +12,6 @@ import java.util.List;
 @RequestMapping("/lookup")
 public class LookupController {
 
-    public LookupController() {
-    }
-
     @GetMapping("/budget")
     public List<String> getBudgetValues() {
         return List.of(Arrays.stream(Budget.values()).map(Budget::getDescription).toArray(String[]::new));
