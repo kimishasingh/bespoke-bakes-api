@@ -1,4 +1,4 @@
-package com.bespoke.bakes.domain;
+package com.bespoke.bakes.domain.enums;
 
 public enum CakeSize {
     CM_10("10cm"),

@@ -17,7 +17,7 @@ public class QuoteRequestController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public QuoteRequest createBundle(@RequestBody QuoteRequest quoteRequest) {
+    public QuoteRequest createQuoteRequest(@RequestBody QuoteRequest quoteRequest) {
         return quoteRequestService.createQuoteRequest(quoteRequest);
     }
 

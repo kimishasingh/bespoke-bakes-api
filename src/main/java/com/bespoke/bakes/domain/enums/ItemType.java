@@ -1,4 +1,4 @@
-package com.bespoke.bakes.domain;
+package com.bespoke.bakes.domain.enums;
 
 public enum ItemType {
     CAKES("Cakes"),

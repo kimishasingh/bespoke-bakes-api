@@ -1,28 +1,25 @@
 package com.bespoke.bakes.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 
-@Entity(name = "User_Tbl")
+@Entity(name = "user_tbl")
 public class User implements Serializable {
 
     @Id
-    @GeneratedValue
-    @Column(name = "Id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
-    @Column(name = "Name")
+    @Column(name = "name")
     private String name;
-    @Column(name = "Surname")
+    @Column(name = "surname")
     private String surname;
-    @Column(name = "MobileNumber")
+    @Column(name = "mobile_number")
     private String mobileNumber;
-    @Column(name = "EmailAddress")
+    @Column(name = "email_address")
     private String emailAddress;
-    @Column(name = "IsActive")
-    private boolean isActive;
+    @Column(name = "is_active")
+    private boolean isActive = true;
 
     public User() {
     }

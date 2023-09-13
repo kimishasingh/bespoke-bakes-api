@@ -1,6 +1,6 @@
 package com.bespoke.bakes.controller;
 
-import com.bespoke.bakes.domain.*;
+import com.bespoke.bakes.domain.enums.*;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

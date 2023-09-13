@@ -1,4 +1,4 @@
-package com.bespoke.bakes.domain;
+package com.bespoke.bakes.domain.enums;
 
 public enum Budget {
     UNDER_R250("Under R250"),
