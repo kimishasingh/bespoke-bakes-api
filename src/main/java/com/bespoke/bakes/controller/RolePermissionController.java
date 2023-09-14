@@ -6,7 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/role-permission")
+@RequestMapping("/admin/role-permission")
 public class RolePermissionController {
 
     private final RolePermissionService rolePermissionService;

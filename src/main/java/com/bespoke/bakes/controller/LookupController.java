@@ -9,7 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @RestController
-@RequestMapping("/lookup")
+@RequestMapping("/api/v1/lookup")
 public class LookupController {
 
     @GetMapping("/budget")

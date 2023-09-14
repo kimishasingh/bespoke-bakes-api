@@ -6,7 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/quote-request")
+@RequestMapping("/admin/quote-request")
 public class QuoteRequestController {
 
     private final QuoteRequestService quoteRequestService;

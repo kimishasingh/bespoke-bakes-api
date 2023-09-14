@@ -11,12 +11,22 @@ import springfox.documentation.spring.web.plugins.Docket;
 public class SwaggerConfig {
 
     @Bean
-    public Docket api() {
+    public Docket admin() {
         return new Docket(DocumentationType.SWAGGER_2)
-                .groupName("Bespoke Bakes API")
+                .groupName("Admin")
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.bespoke.bakes.controller"))
-                .paths(PathSelectors.any())
+                .paths(PathSelectors.ant("/admin/**"))
+                .build();
+    }
+
+    @Bean
+    public Docket api() {
+        return new Docket(DocumentationType.SWAGGER_2)
+                .groupName("API v1")
+                .select()
+                .apis(RequestHandlerSelectors.basePackage("com.bespoke.bakes.controller"))
+                .paths(PathSelectors.ant("/api/v1/**"))
                 .build();
     }
 }

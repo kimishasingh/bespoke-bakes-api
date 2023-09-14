@@ -6,7 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/user-role")
+@RequestMapping("/admin/user-role")
 public class UserRoleController {
 
     private final UserRoleService userRoleService;
