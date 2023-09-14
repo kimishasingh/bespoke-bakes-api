@@ -1,23 +1,20 @@
 package com.bespoke.bakes.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 
-@Entity(name = "Role_Permission_Tbl")
+@Entity(name = "role_permission_tbl")
 public class RolePermission implements Serializable {
 
     @Id
-    @GeneratedValue
-    @Column(name = "Id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
-    @Column(name = "RoleId")
+    @Column(name = "role_id")
     private Long roleId;
-    @Column(name = "PermissionId")
+    @Column(name = "permission_id")
     private Long permissionId;
-    @Column(name = "IsActive")
+    @Column(name = "is_active")
     private boolean isActive;
 
     public RolePermission() {

@@ -1,21 +1,18 @@
 package com.bespoke.bakes.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 
-@Entity(name = "Role_Tbl")
+@Entity(name = "role_tbl")
 public class Role implements Serializable {
 
     @Id
-    @GeneratedValue
-    @Column(name = "Id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
-    @Column(name = "Name")
+    @Column(name = "name")
     private String name;
-    @Column(name = "IsActive")
+    @Column(name = "is_active")
     private boolean isActive;
 
     public Role() {

@@ -2,208 +2,210 @@ package com.bespoke.bakes.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.io.Serializable;
 import java.sql.Date;
 
-@Entity(name = "Quote_Request_Tbl")
+@Entity(name = "quote_request_tbl")
 public class QuoteRequest implements Serializable {
 
     @Id
-    @GeneratedValue
-    private Long Id;
-    private Long BundleId;
-    private String Occasion;
-    private String ItemType;
-    private String CakeFlavour;
-    private String IcingType;
-    private String IcingFlavour;
-    private String CakeSize;
-    private String NoOfTiers;
-    private String Description;
-    private Long Quantity;
-    private String GenderIndicator;
-    private Date DateTimeRequired;
-    private Float LocationLongitude;
-    private Float LocationLatitude;
-    private String DeliveryOption;
-    private String Budget;
-    private String AdditionalInfo;
-    private boolean IsActive;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private Long bundleId;
+    private String occasion;
+    private String itemType;
+    private String cakeFlavour;
+    private String icingType;
+    private String icingFlavour;
+    private String cakeSize;
+    private String noOfTiers;
+    private String description;
+    private Long quantity;
+    private String genderIndicator;
+    private Date dateTimeRequired;
+    private Float locationLongitude;
+    private Float locationLatitude;
+    private String deliveryOption;
+    private String budget;
+    private String additionalInfo;
+    private boolean isActive;
 
     public QuoteRequest() {
     }
 
-    public QuoteRequest(Long bundleId, String occasion, String itemType, String cakeFlavour, String icingType, String icingFlavour, String cakeSize, String noOfTiers, String description, Long quantity, String genderIndicator, Date dateTimeRequired, Float locationLongitude, Float locationLatitude, String deliveryOption, String budget, String additionalInfo, boolean isActive) {
-        BundleId = bundleId;
-        Occasion = occasion;
-        ItemType = itemType;
-        CakeFlavour = cakeFlavour;
-        IcingType = icingType;
-        IcingFlavour = icingFlavour;
-        CakeSize = cakeSize;
-        NoOfTiers = noOfTiers;
-        Description = description;
-        Quantity = quantity;
-        GenderIndicator = genderIndicator;
-        DateTimeRequired = dateTimeRequired;
-        LocationLongitude = locationLongitude;
-        LocationLatitude = locationLatitude;
-        DeliveryOption = deliveryOption;
-        Budget = budget;
-        AdditionalInfo = additionalInfo;
-        IsActive = isActive;
+    public QuoteRequest(Long id, Long bundleId, String occasion, String itemType, String cakeFlavour, String icingType, String icingFlavour, String cakeSize, String noOfTiers, String description, Long quantity, String genderIndicator, Date dateTimeRequired, Float locationLongitude, Float locationLatitude, String deliveryOption, String budget, String additionalInfo, boolean isActive) {
+        this.id = id;
+        this.bundleId = bundleId;
+        this.occasion = occasion;
+        this.itemType = itemType;
+        this.cakeFlavour = cakeFlavour;
+        this.icingType = icingType;
+        this.icingFlavour = icingFlavour;
+        this.cakeSize = cakeSize;
+        this.noOfTiers = noOfTiers;
+        this.description = description;
+        this.quantity = quantity;
+        this.genderIndicator = genderIndicator;
+        this.dateTimeRequired = dateTimeRequired;
+        this.locationLongitude = locationLongitude;
+        this.locationLatitude = locationLatitude;
+        this.deliveryOption = deliveryOption;
+        this.budget = budget;
+        this.additionalInfo = additionalInfo;
+        this.isActive = isActive;
     }
 
     public Long getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Long id) {
-        Id = id;
+        this.id = id;
     }
 
     public Long getBundleId() {
-        return BundleId;
+        return bundleId;
     }
 
     public void setBundleId(Long bundleId) {
-        BundleId = bundleId;
+        this.bundleId = bundleId;
     }
 
     public String getOccasion() {
-        return Occasion;
+        return occasion;
     }
 
     public void setOccasion(String occasion) {
-        Occasion = occasion;
+        this.occasion = occasion;
     }
 
     public String getItemType() {
-        return ItemType;
+        return itemType;
     }
 
     public void setItemType(String itemType) {
-        ItemType = itemType;
+        this.itemType = itemType;
     }
 
     public String getCakeFlavour() {
-        return CakeFlavour;
+        return cakeFlavour;
     }
 
     public void setCakeFlavour(String cakeFlavour) {
-        CakeFlavour = cakeFlavour;
+        this.cakeFlavour = cakeFlavour;
     }
 
     public String getIcingType() {
-        return IcingType;
+        return icingType;
     }
 
     public void setIcingType(String icingType) {
-        IcingType = icingType;
+        this.icingType = icingType;
     }
 
     public String getIcingFlavour() {
-        return IcingFlavour;
+        return icingFlavour;
     }
 
     public void setIcingFlavour(String icingFlavour) {
-        IcingFlavour = icingFlavour;
+        this.icingFlavour = icingFlavour;
     }
 
     public String getCakeSize() {
-        return CakeSize;
+        return cakeSize;
     }
 
     public void setCakeSize(String cakeSize) {
-        CakeSize = cakeSize;
+        this.cakeSize = cakeSize;
     }
 
     public String getNoOfTiers() {
-        return NoOfTiers;
+        return noOfTiers;
     }
 
     public void setNoOfTiers(String noOfTiers) {
-        NoOfTiers = noOfTiers;
+        this.noOfTiers = noOfTiers;
     }
 
     public String getDescription() {
-        return Description;
+        return description;
     }
 
     public void setDescription(String description) {
-        Description = description;
+        this.description = description;
     }
 
     public Long getQuantity() {
-        return Quantity;
+        return quantity;
     }
 
     public void setQuantity(Long quantity) {
-        Quantity = quantity;
+        this.quantity = quantity;
     }
 
     public String getGenderIndicator() {
-        return GenderIndicator;
+        return genderIndicator;
     }
 
     public void setGenderIndicator(String genderIndicator) {
-        GenderIndicator = genderIndicator;
+        this.genderIndicator = genderIndicator;
     }
 
     public Date getDateTimeRequired() {
-        return DateTimeRequired;
+        return dateTimeRequired;
     }
 
     public void setDateTimeRequired(Date dateTimeRequired) {
-        DateTimeRequired = dateTimeRequired;
+        this.dateTimeRequired = dateTimeRequired;
     }
 
     public Float getLocationLongitude() {
-        return LocationLongitude;
+        return locationLongitude;
     }
 
     public void setLocationLongitude(Float locationLongitude) {
-        LocationLongitude = locationLongitude;
+        this.locationLongitude = locationLongitude;
     }
 
     public Float getLocationLatitude() {
-        return LocationLatitude;
+        return locationLatitude;
     }
 
     public void setLocationLatitude(Float locationLatitude) {
-        LocationLatitude = locationLatitude;
+        this.locationLatitude = locationLatitude;
     }
 
     public String getDeliveryOption() {
-        return DeliveryOption;
+        return deliveryOption;
     }
 
     public void setDeliveryOption(String deliveryOption) {
-        DeliveryOption = deliveryOption;
+        this.deliveryOption = deliveryOption;
     }
 
     public String getBudget() {
-        return Budget;
+        return budget;
     }
 
     public void setBudget(String budget) {
-        Budget = budget;
+        this.budget = budget;
     }
 
     public String getAdditionalInfo() {
-        return AdditionalInfo;
+        return additionalInfo;
     }
 
     public void setAdditionalInfo(String additionalInfo) {
-        AdditionalInfo = additionalInfo;
+        this.additionalInfo = additionalInfo;
     }
 
     public boolean isActive() {
-        return IsActive;
+        return isActive;
     }
 
     public void setActive(boolean active) {
-        IsActive = active;
+        isActive = active;
     }
 }

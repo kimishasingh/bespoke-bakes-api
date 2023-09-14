@@ -1,25 +1,22 @@
 package com.bespoke.bakes.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 
-@Entity(name = "User_Credential_Tbl")
+@Entity(name = "user_credential_tbl")
 public class UserCredential implements Serializable {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "Id")
     private Long id;
-    @Column(name = "UserId")
+    @Column(name = "user_id")
     private Long userId;
-    @Column(name = "Username")
+    @Column(name = "username")
     private String username;
-    @Column(name = "Password")
+    @Column(name = "password")
     private String password;
-    @Column(name = "IsActive")
+    @Column(name = "is_active")
     private boolean isActive;
 
     public UserCredential() {

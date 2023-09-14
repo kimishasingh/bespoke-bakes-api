@@ -1,24 +1,21 @@
 package com.bespoke.bakes.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Blob;
 
-@Entity(name = "Image_Tbl")
+@Entity(name = "image_tbl")
 public class Image implements Serializable {
 
     @Id
-    @GeneratedValue
-    @Column(name = "Id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
-    @Column(name = "Image")
+    @Column(name = "image")
     private Blob image;
-    @Column(name = "QuoteRequestId")
+    @Column(name = "quote_request_id")
     private Long quoteRequestId;
-    @Column(name = "IsActive")
+    @Column(name = "is_active")
     private boolean isActive;
 
     public Image() {

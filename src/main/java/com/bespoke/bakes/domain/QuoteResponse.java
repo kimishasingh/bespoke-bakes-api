@@ -1,31 +1,28 @@
 package com.bespoke.bakes.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 
-@Entity(name = "Quote_Response_Tbl")
+@Entity(name = "quote_response_tbl")
 public class QuoteResponse implements Serializable {
 
     @Id
-    @GeneratedValue
-    @Column(name = "Id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
-    @Column(name = "BundleId")
+    @Column(name = "bundle_id")
     private Long bundleId;
-    @Column(name = "QuoteRequestId")
+    @Column(name = "quote_request_id")
     private Long quoteRequestId;
-    @Column(name = "BundleTotal")
+    @Column(name = "bundle_total")
     private Long bundleTotal;
-    @Column(name = "QuoteRequestTotal")
+    @Column(name = "quote_request_total")
     private Long quoteRequestTotal;
-    @Column(name = "DiscountAppliedPercentage")
+    @Column(name = "discount_applied_percentage")
     private Long discountAppliedPercentage;
-    @Column(name = "QuoteAccepted")
+    @Column(name = "quote_accepted")
     private boolean quoteAccepted;
-    @Column(name = "IsActive")
+    @Column(name = "is_active")
     private boolean isActive;
 
     public QuoteResponse() {
