@@ -1,33 +1,31 @@
 package com.bespoke.bakes.domain.request;
 
-import com.bespoke.bakes.domain.enums.*;
-
-import java.sql.Date;
+import java.util.Date;
 
 public class CreateQuoteRequest {
     private Long userId;
     private Long bundleId;
-    private Occasion occasion;
-    private ItemType itemType;
-    private CakeFlavour cakeFlavour;
-    private IcingType icingType;
-    private IcingFlavour icingFlavour;
-    private CakeSize cakeSize;
+    private String occasion;
+    private String itemType;
+    private String cakeFlavour;
+    private String icingType;
+    private String icingFlavour;
+    private String cakeSize;
     private Long noOfTiers;
     private String description;
     private Long quantity;
-    private GenderIndicator genderIndicator;
+    private String genderIndicator;
     private Date dateTimeRequired;
     private Float locationLongitude;
     private Float locationLatitude;
-    private DeliveryOption deliveryOption;
-    private Budget budget;
+    private String deliveryOption;
+    private String budget;
     private String additionalInfo;
 
     public CreateQuoteRequest() {
     }
 
-    public CreateQuoteRequest(Long userId, Long bundleId, Occasion occasion, ItemType itemType, CakeFlavour cakeFlavour, IcingType icingType, IcingFlavour icingFlavour, CakeSize cakeSize, Long noOfTiers, String description, Long quantity, GenderIndicator genderIndicator, Date dateTimeRequired, Float locationLongitude, Float locationLatitude, DeliveryOption deliveryOption, Budget budget, String additionalInfo) {
+    public CreateQuoteRequest(Long userId, Long bundleId, String occasion, String itemType, String cakeFlavour, String icingType, String icingFlavour, String cakeSize, Long noOfTiers, String description, Long quantity, String genderIndicator, Date dateTimeRequired, Float locationLongitude, Float locationLatitude, String deliveryOption, String budget, String additionalInfo) {
         this.userId = userId;
         this.bundleId = bundleId;
         this.occasion = occasion;
@@ -64,51 +62,51 @@ public class CreateQuoteRequest {
         this.bundleId = bundleId;
     }
 
-    public Occasion getOccasion() {
+    public String getOccasion() {
         return occasion;
     }
 
-    public void setOccasion(Occasion occasion) {
+    public void setOccasion(String occasion) {
         this.occasion = occasion;
     }
 
-    public ItemType getItemType() {
+    public String getItemType() {
         return itemType;
     }
 
-    public void setItemType(ItemType itemType) {
+    public void setItemType(String itemType) {
         this.itemType = itemType;
     }
 
-    public CakeFlavour getCakeFlavour() {
+    public String getCakeFlavour() {
         return cakeFlavour;
     }
 
-    public void setCakeFlavour(CakeFlavour cakeFlavour) {
+    public void setCakeFlavour(String cakeFlavour) {
         this.cakeFlavour = cakeFlavour;
     }
 
-    public IcingType getIcingType() {
+    public String getIcingType() {
         return icingType;
     }
 
-    public void setIcingType(IcingType icingType) {
+    public void setIcingType(String icingType) {
         this.icingType = icingType;
     }
 
-    public IcingFlavour getIcingFlavour() {
+    public String getIcingFlavour() {
         return icingFlavour;
     }
 
-    public void setIcingFlavour(IcingFlavour icingFlavour) {
+    public void setIcingFlavour(String icingFlavour) {
         this.icingFlavour = icingFlavour;
     }
 
-    public CakeSize getCakeSize() {
+    public String getCakeSize() {
         return cakeSize;
     }
 
-    public void setCakeSize(CakeSize cakeSize) {
+    public void setCakeSize(String cakeSize) {
         this.cakeSize = cakeSize;
     }
 
@@ -136,11 +134,11 @@ public class CreateQuoteRequest {
         this.quantity = quantity;
     }
 
-    public GenderIndicator getGenderIndicator() {
+    public String getGenderIndicator() {
         return genderIndicator;
     }
 
-    public void setGenderIndicator(GenderIndicator genderIndicator) {
+    public void setGenderIndicator(String genderIndicator) {
         this.genderIndicator = genderIndicator;
     }
 
@@ -168,19 +166,19 @@ public class CreateQuoteRequest {
         this.locationLatitude = locationLatitude;
     }
 
-    public DeliveryOption getDeliveryOption() {
+    public String getDeliveryOption() {
         return deliveryOption;
     }
 
-    public void setDeliveryOption(DeliveryOption deliveryOption) {
+    public void setDeliveryOption(String deliveryOption) {
         this.deliveryOption = deliveryOption;
     }
 
-    public Budget getBudget() {
+    public String getBudget() {
         return budget;
     }
 
-    public void setBudget(Budget budget) {
+    public void setBudget(String budget) {
         this.budget = budget;
     }
 
