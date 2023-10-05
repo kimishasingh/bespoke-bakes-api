@@ -1,16 +1,26 @@
 package com.bespoke.bakes.controller;
 
+import com.bespoke.bakes.domain.Role;
 import com.bespoke.bakes.domain.enums.*;
+import com.bespoke.bakes.service.RoleService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
 @RestController
 @RequestMapping("/api/v1/lookup")
 public class LookupController {
+
+    private final RoleService roleService;
+
+    public LookupController(RoleService roleService) {
+        this.roleService = roleService;
+    }
 
     @GetMapping("/budget")
     public List<String> getBudgetValues() {
@@ -57,4 +67,10 @@ public class LookupController {
         return List.of(Arrays.stream(Occasion.values()).map(Occasion::getDescription).toArray(String[]::new));
     }
 
+    @GetMapping("/role")
+    public List<String> getRoleValues() {
+        return StreamSupport.stream(roleService.getAllRoles().spliterator(), false)
+                .map(Role::getName)
+                .collect(Collectors.toList());
+    }
 }
