@@ -1,7 +1,7 @@
 package com.bespoke.bakes.domain.enums;
 
 public enum CakeSize {
-    CM_10("10cm"),
+        CM_10("10cm"),
     CM_15("15cm"),
     CM_20("20cm"),
     CM_25("25cm"),

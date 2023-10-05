@@ -1,9 +1,9 @@
 package com.bespoke.bakes.domain.enums;
 
 public enum ItemType {
-    CAKES("Cakes"),
+    CAKE("Cake"),
     CUPCAKES("Cupcakes"),
-    CAKE_POPS("Cake pops");
+    CAKE_POPS("Cake Pops");
 
     private final String description;
 

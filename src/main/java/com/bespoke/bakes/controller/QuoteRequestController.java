@@ -1,6 +1,7 @@
 package com.bespoke.bakes.controller;
 
 import com.bespoke.bakes.domain.QuoteRequest;
+import com.bespoke.bakes.domain.request.CreateQuoteRequest;
 import com.bespoke.bakes.service.QuoteRequestService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -17,7 +18,7 @@ public class QuoteRequestController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public QuoteRequest createQuoteRequest(@RequestBody QuoteRequest quoteRequest) {
+    public QuoteRequest createQuoteRequest(@RequestBody CreateQuoteRequest quoteRequest) {
         return quoteRequestService.createQuoteRequest(quoteRequest);
     }
 

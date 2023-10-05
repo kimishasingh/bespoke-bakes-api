@@ -1,42 +1,34 @@
-package com.bespoke.bakes.domain;
+package com.bespoke.bakes.domain.request;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import java.io.Serializable;
+import com.bespoke.bakes.domain.enums.*;
+
 import java.sql.Date;
 
-@Entity(name = "quote_request_tbl")
-public class QuoteRequest implements Serializable {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class CreateQuoteRequest {
+    private Long userId;
     private Long bundleId;
-    private String occasion;
-    private String itemType;
-    private String cakeFlavour;
-    private String icingType;
-    private String icingFlavour;
-    private String cakeSize;
+    private Occasion occasion;
+    private ItemType itemType;
+    private CakeFlavour cakeFlavour;
+    private IcingType icingType;
+    private IcingFlavour icingFlavour;
+    private CakeSize cakeSize;
     private Long noOfTiers;
     private String description;
     private Long quantity;
-    private String genderIndicator;
+    private GenderIndicator genderIndicator;
     private Date dateTimeRequired;
     private Float locationLongitude;
     private Float locationLatitude;
-    private String deliveryOption;
-    private String budget;
+    private DeliveryOption deliveryOption;
+    private Budget budget;
     private String additionalInfo;
-    private boolean isActive;
 
-    public QuoteRequest() {
+    public CreateQuoteRequest() {
     }
 
-    public QuoteRequest(Long id, Long bundleId, String occasion, String itemType, String cakeFlavour, String icingType, String icingFlavour, String cakeSize, Long noOfTiers, String description, Long quantity, String genderIndicator, Date dateTimeRequired, Float locationLongitude, Float locationLatitude, String deliveryOption, String budget, String additionalInfo, boolean isActive) {
-        this.id = id;
+    public CreateQuoteRequest(Long userId, Long bundleId, Occasion occasion, ItemType itemType, CakeFlavour cakeFlavour, IcingType icingType, IcingFlavour icingFlavour, CakeSize cakeSize, Long noOfTiers, String description, Long quantity, GenderIndicator genderIndicator, Date dateTimeRequired, Float locationLongitude, Float locationLatitude, DeliveryOption deliveryOption, Budget budget, String additionalInfo) {
+        this.userId = userId;
         this.bundleId = bundleId;
         this.occasion = occasion;
         this.itemType = itemType;
@@ -54,15 +46,14 @@ public class QuoteRequest implements Serializable {
         this.deliveryOption = deliveryOption;
         this.budget = budget;
         this.additionalInfo = additionalInfo;
-        this.isActive = isActive;
     }
 
-    public Long getId() {
-        return id;
+    public Long getUserId() {
+        return userId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
     public Long getBundleId() {
@@ -73,51 +64,51 @@ public class QuoteRequest implements Serializable {
         this.bundleId = bundleId;
     }
 
-    public String getOccasion() {
+    public Occasion getOccasion() {
         return occasion;
     }
 
-    public void setOccasion(String occasion) {
+    public void setOccasion(Occasion occasion) {
         this.occasion = occasion;
     }
 
-    public String getItemType() {
+    public ItemType getItemType() {
         return itemType;
     }
 
-    public void setItemType(String itemType) {
+    public void setItemType(ItemType itemType) {
         this.itemType = itemType;
     }
 
-    public String getCakeFlavour() {
+    public CakeFlavour getCakeFlavour() {
         return cakeFlavour;
     }
 
-    public void setCakeFlavour(String cakeFlavour) {
+    public void setCakeFlavour(CakeFlavour cakeFlavour) {
         this.cakeFlavour = cakeFlavour;
     }
 
-    public String getIcingType() {
+    public IcingType getIcingType() {
         return icingType;
     }
 
-    public void setIcingType(String icingType) {
+    public void setIcingType(IcingType icingType) {
         this.icingType = icingType;
     }
 
-    public String getIcingFlavour() {
+    public IcingFlavour getIcingFlavour() {
         return icingFlavour;
     }
 
-    public void setIcingFlavour(String icingFlavour) {
+    public void setIcingFlavour(IcingFlavour icingFlavour) {
         this.icingFlavour = icingFlavour;
     }
 
-    public String getCakeSize() {
+    public CakeSize getCakeSize() {
         return cakeSize;
     }
 
-    public void setCakeSize(String cakeSize) {
+    public void setCakeSize(CakeSize cakeSize) {
         this.cakeSize = cakeSize;
     }
 
@@ -145,11 +136,11 @@ public class QuoteRequest implements Serializable {
         this.quantity = quantity;
     }
 
-    public String getGenderIndicator() {
+    public GenderIndicator getGenderIndicator() {
         return genderIndicator;
     }
 
-    public void setGenderIndicator(String genderIndicator) {
+    public void setGenderIndicator(GenderIndicator genderIndicator) {
         this.genderIndicator = genderIndicator;
     }
 
@@ -177,19 +168,19 @@ public class QuoteRequest implements Serializable {
         this.locationLatitude = locationLatitude;
     }
 
-    public String getDeliveryOption() {
+    public DeliveryOption getDeliveryOption() {
         return deliveryOption;
     }
 
-    public void setDeliveryOption(String deliveryOption) {
+    public void setDeliveryOption(DeliveryOption deliveryOption) {
         this.deliveryOption = deliveryOption;
     }
 
-    public String getBudget() {
+    public Budget getBudget() {
         return budget;
     }
 
-    public void setBudget(String budget) {
+    public void setBudget(Budget budget) {
         this.budget = budget;
     }
 
@@ -199,13 +190,5 @@ public class QuoteRequest implements Serializable {
 
     public void setAdditionalInfo(String additionalInfo) {
         this.additionalInfo = additionalInfo;
-    }
-
-    public boolean isActive() {
-        return isActive;
-    }
-
-    public void setActive(boolean active) {
-        isActive = active;
     }
 }

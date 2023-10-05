@@ -18,9 +18,8 @@ public class Bundle implements Serializable {
     public Bundle() {
     }
 
-    public Bundle(Long userId, boolean isActive) {
+    public Bundle(Long userId) {
         this.userId = userId;
-        this.isActive = isActive;
     }
 
     public Long getId() {
