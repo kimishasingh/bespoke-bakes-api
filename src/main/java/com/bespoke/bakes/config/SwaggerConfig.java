@@ -29,4 +29,14 @@ public class SwaggerConfig {
                 .paths(PathSelectors.ant("/api/v1/**"))
                 .build();
     }
+
+    @Bean
+    public Docket login() {
+        return new Docket(DocumentationType.SWAGGER_2)
+                .groupName("Login")
+                .select()
+                .apis(RequestHandlerSelectors.basePackage("com.bespoke.bakes.controller"))
+                .paths(PathSelectors.ant("/login/**"))
+                .build();
+    }
 }
