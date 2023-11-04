@@ -10,6 +10,7 @@ public class CreateQuoteRequest {
     private String cakeFlavour;
     private String icingType;
     private String icingFlavour;
+    private String icingColour;
     private String cakeSize;
     private Long noOfTiers;
     private String description;
@@ -25,7 +26,7 @@ public class CreateQuoteRequest {
     public CreateQuoteRequest() {
     }
 
-    public CreateQuoteRequest(Long userId, Long bundleId, String occasion, String itemType, String cakeFlavour, String icingType, String icingFlavour, String cakeSize, Long noOfTiers, String description, Long quantity, String genderIndicator, Date dateTimeRequired, Float locationLongitude, Float locationLatitude, String deliveryOption, String budget, String additionalInfo) {
+    public CreateQuoteRequest(Long userId, Long bundleId, String occasion, String itemType, String cakeFlavour, String icingType, String icingFlavour, String icingColour, String cakeSize, Long noOfTiers, String description, Long quantity, String genderIndicator, Date dateTimeRequired, Float locationLongitude, Float locationLatitude, String deliveryOption, String budget, String additionalInfo) {
         this.userId = userId;
         this.bundleId = bundleId;
         this.occasion = occasion;
@@ -33,6 +34,7 @@ public class CreateQuoteRequest {
         this.cakeFlavour = cakeFlavour;
         this.icingType = icingType;
         this.icingFlavour = icingFlavour;
+        this.icingColour = icingColour;
         this.cakeSize = cakeSize;
         this.noOfTiers = noOfTiers;
         this.description = description;
@@ -100,6 +102,14 @@ public class CreateQuoteRequest {
 
     public void setIcingFlavour(String icingFlavour) {
         this.icingFlavour = icingFlavour;
+    }
+
+    public String getIcingColour() {
+        return icingColour;
+    }
+
+    public void setIcingColour(String icingColour) {
+        this.icingColour = icingColour;
     }
 
     public String getCakeSize() {

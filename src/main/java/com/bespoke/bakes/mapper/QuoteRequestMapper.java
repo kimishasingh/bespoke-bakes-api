@@ -17,6 +17,7 @@ public class QuoteRequestMapper {
         quoteRequest.setCakeFlavour(createQuoteRequest.getCakeFlavour());
         quoteRequest.setIcingType(createQuoteRequest.getIcingType());
         quoteRequest.setIcingFlavour(createQuoteRequest.getIcingFlavour());
+        quoteRequest.setIcingColour(createQuoteRequest.getIcingColour());
         quoteRequest.setCakeSize(createQuoteRequest.getCakeSize());
         quoteRequest.setNoOfTiers(createQuoteRequest.getNoOfTiers());
         quoteRequest.setDescription(createQuoteRequest.getDescription());
