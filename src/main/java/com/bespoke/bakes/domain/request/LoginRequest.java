@@ -5,12 +5,15 @@ public class LoginRequest {
     private String username;
     private String password;
 
+    private String roleName;
+
     public LoginRequest() {
     }
 
-    public LoginRequest(String username, String password) {
+    public LoginRequest(String username, String password, String roleName) {
         this.username = username;
         this.password = password;
+        this.roleName = roleName;
     }
 
     public String getUsername() {
@@ -27,5 +30,13 @@ public class LoginRequest {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getRoleName() {
+        return roleName;
+    }
+
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
     }
 }

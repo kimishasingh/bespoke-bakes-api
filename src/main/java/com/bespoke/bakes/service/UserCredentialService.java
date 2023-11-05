@@ -2,9 +2,11 @@ package com.bespoke.bakes.service;
 
 import com.bespoke.bakes.domain.User;
 import com.bespoke.bakes.domain.UserCredential;
+import com.bespoke.bakes.domain.UserRole;
 import com.bespoke.bakes.domain.request.LoginRequest;
 import com.bespoke.bakes.repository.UserCredentialRepository;
 import com.bespoke.bakes.repository.UserRepository;
+import com.bespoke.bakes.repository.UserRoleRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
@@ -17,11 +19,14 @@ public class UserCredentialService {
 
     private final UserCredentialRepository userCredentialRepository;
     private final UserRepository userRepository;
+    private final UserRoleRepository userRoleRepository;
 
     public UserCredentialService(UserCredentialRepository userCredentialRepository,
-                                 UserRepository userRepository) {
+                                 UserRepository userRepository,
+                                 UserRoleRepository userRoleRepository) {
         this.userCredentialRepository = userCredentialRepository;
         this.userRepository = userRepository;
+        this.userRoleRepository = userRoleRepository;
     }
 
     public UserCredential createUserCredential(UserCredential userCredential) {
@@ -40,7 +45,11 @@ public class UserCredentialService {
     public User loginUserBasedOnCredentials(LoginRequest loginRequest) {
         List<UserCredential> userCredentials = userCredentialRepository.findByUsernameAndPassword(loginRequest.getUsername(), loginRequest.getPassword());
         if (!CollectionUtils.isEmpty(userCredentials)) {
-            return userRepository.findAllById(Collections.singletonList(userCredentials.get(0).getUserId())).get(0);
+            Long userId = userCredentials.get(0).getUserId();
+            List<UserRole> matchingRoles = userRoleRepository.findByUserIdAndRoleName(userId, loginRequest.getRoleName());
+            if (!CollectionUtils.isEmpty(matchingRoles)) {
+                return userRepository.findAllById(Collections.singletonList(userId)).get(0);
+            }
         }
         return null;
     }
