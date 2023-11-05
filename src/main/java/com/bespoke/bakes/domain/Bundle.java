@@ -12,7 +12,7 @@ public class Bundle implements Serializable {
     private Long id;
     @Column(name = "user_id")
     private Long userId;
-    @Column(name = "is_active")
+    @Column(name = "is_active", insertable = false)
     private boolean isActive;
 
     public Bundle() {

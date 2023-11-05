@@ -10,6 +10,7 @@ C:\Users\kimisha.singh\Documents\TechAccelerator\bakes\src\main\java\com\bespoke
 C:\Users\kimisha.singh\Documents\TechAccelerator\bakes\src\main\java\com\bespoke\bakes\controller\LookupController.java
 C:\Users\kimisha.singh\Documents\TechAccelerator\bakes\src\main\java\com\bespoke\bakes\domain\enums\Occasion.java
 C:\Users\kimisha.singh\Documents\TechAccelerator\bakes\src\main\java\com\bespoke\bakes\repository\UserCredentialRepository.java
+C:\Users\kimisha.singh\Documents\TechAccelerator\bakes\src\main\java\com\bespoke\bakes\mapper\QuoteRequestMapper.java
 C:\Users\kimisha.singh\Documents\TechAccelerator\bakes\src\main\java\com\bespoke\bakes\repository\PermissionRepository.java
 C:\Users\kimisha.singh\Documents\TechAccelerator\bakes\src\main\java\com\bespoke\bakes\domain\Role.java
 C:\Users\kimisha.singh\Documents\TechAccelerator\bakes\src\main\java\com\bespoke\bakes\domain\enums\CakeSize.java
@@ -18,6 +19,8 @@ C:\Users\kimisha.singh\Documents\TechAccelerator\bakes\src\main\java\com\bespoke
 C:\Users\kimisha.singh\Documents\TechAccelerator\bakes\src\main\java\com\bespoke\bakes\domain\UserRole.java
 C:\Users\kimisha.singh\Documents\TechAccelerator\bakes\src\main\java\com\bespoke\bakes\controller\QuoteRequestController.java
 C:\Users\kimisha.singh\Documents\TechAccelerator\bakes\src\main\java\com\bespoke\bakes\controller\BundleController.java
+C:\Users\kimisha.singh\Documents\TechAccelerator\bakes\src\main\java\com\bespoke\bakes\controller\LoginController.java
+C:\Users\kimisha.singh\Documents\TechAccelerator\bakes\src\main\java\com\bespoke\bakes\domain\request\CreateQuoteRequest.java
 C:\Users\kimisha.singh\Documents\TechAccelerator\bakes\src\main\java\com\bespoke\bakes\repository\ImageRepository.java
 C:\Users\kimisha.singh\Documents\TechAccelerator\bakes\src\main\java\com\bespoke\bakes\service\RoleService.java
 C:\Users\kimisha.singh\Documents\TechAccelerator\bakes\src\main\java\com\bespoke\bakes\repository\RolePermissionRepository.java
@@ -26,8 +29,10 @@ C:\Users\kimisha.singh\Documents\TechAccelerator\bakes\src\main\java\com\bespoke
 C:\Users\kimisha.singh\Documents\TechAccelerator\bakes\src\main\java\com\bespoke\bakes\domain\enums\DeliveryOption.java
 C:\Users\kimisha.singh\Documents\TechAccelerator\bakes\src\main\java\com\bespoke\bakes\domain\QuoteResponse.java
 C:\Users\kimisha.singh\Documents\TechAccelerator\bakes\src\main\java\com\bespoke\bakes\controller\UserCredentialController.java
+C:\Users\kimisha.singh\Documents\TechAccelerator\bakes\src\main\java\com\bespoke\bakes\domain\request\LoginRequest.java
 C:\Users\kimisha.singh\Documents\TechAccelerator\bakes\src\main\java\com\bespoke\bakes\service\UserCredentialService.java
 C:\Users\kimisha.singh\Documents\TechAccelerator\bakes\src\main\java\com\bespoke\bakes\service\UserService.java
+C:\Users\kimisha.singh\Documents\TechAccelerator\bakes\src\main\java\com\bespoke\bakes\domain\request\CreateImageRequest.java
 C:\Users\kimisha.singh\Documents\TechAccelerator\bakes\src\main\java\com\bespoke\bakes\BakesApplication.java
 C:\Users\kimisha.singh\Documents\TechAccelerator\bakes\src\main\java\com\bespoke\bakes\repository\RoleRepository.java
 C:\Users\kimisha.singh\Documents\TechAccelerator\bakes\src\main\java\com\bespoke\bakes\domain\enums\Budget.java
@@ -40,11 +45,13 @@ C:\Users\kimisha.singh\Documents\TechAccelerator\bakes\src\main\java\com\bespoke
 C:\Users\kimisha.singh\Documents\TechAccelerator\bakes\src\main\java\com\bespoke\bakes\controller\RoleController.java
 C:\Users\kimisha.singh\Documents\TechAccelerator\bakes\src\main\java\com\bespoke\bakes\controller\RolePermissionController.java
 C:\Users\kimisha.singh\Documents\TechAccelerator\bakes\src\main\java\com\bespoke\bakes\repository\UserRoleRepository.java
+C:\Users\kimisha.singh\Documents\TechAccelerator\bakes\src\main\java\com\bespoke\bakes\domain\enums\ImageType.java
 C:\Users\kimisha.singh\Documents\TechAccelerator\bakes\src\main\java\com\bespoke\bakes\controller\UserRoleController.java
 C:\Users\kimisha.singh\Documents\TechAccelerator\bakes\src\main\java\com\bespoke\bakes\repository\UserRepository.java
 C:\Users\kimisha.singh\Documents\TechAccelerator\bakes\src\main\java\com\bespoke\bakes\controller\QuoteResponseController.java
 C:\Users\kimisha.singh\Documents\TechAccelerator\bakes\src\main\java\com\bespoke\bakes\config\SwaggerConfig.java
 C:\Users\kimisha.singh\Documents\TechAccelerator\bakes\src\main\java\com\bespoke\bakes\domain\RolePermission.java
+C:\Users\kimisha.singh\Documents\TechAccelerator\bakes\src\main\java\com\bespoke\bakes\mapper\ImageMapper.java
 C:\Users\kimisha.singh\Documents\TechAccelerator\bakes\src\main\java\com\bespoke\bakes\service\UserRoleService.java
 C:\Users\kimisha.singh\Documents\TechAccelerator\bakes\src\main\java\com\bespoke\bakes\domain\Permission.java
 C:\Users\kimisha.singh\Documents\TechAccelerator\bakes\src\main\java\com\bespoke\bakes\domain\UserCredential.java

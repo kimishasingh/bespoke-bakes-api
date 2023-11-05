@@ -1,7 +1,5 @@
 package com.bespoke.bakes.domain.request;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-
 import java.util.Date;
 
 public class CreateQuoteRequest {

@@ -25,6 +25,9 @@ com\bespoke\bakes\domain\enums\CakeFlavour.class
 com\bespoke\bakes\service\PermissionService.class
 com\bespoke\bakes\repository\UserRoleRepository.class
 com\bespoke\bakes\domain\QuoteResponse.class
+com\bespoke\bakes\domain\request\CreateImageRequest.class
+com\bespoke\bakes\domain\request\CreateQuoteRequest.class
+com\bespoke\bakes\domain\request\LoginRequest.class
 com\bespoke\bakes\repository\RoleRepository.class
 com\bespoke\bakes\domain\Bundle.class
 com\bespoke\bakes\controller\LookupController.class
@@ -36,10 +39,13 @@ com\bespoke\bakes\domain\enums\DeliveryOption.class
 com\bespoke\bakes\service\UserRoleService.class
 com\bespoke\bakes\repository\BundleRepository.class
 com\bespoke\bakes\repository\UserRepository.class
+com\bespoke\bakes\mapper\QuoteRequestMapper.class
 com\bespoke\bakes\service\UserService.class
 com\bespoke\bakes\domain\User.class
 com\bespoke\bakes\domain\enums\IcingFlavour.class
 com\bespoke\bakes\domain\Role.class
+com\bespoke\bakes\domain\enums\ImageType.class
+com\bespoke\bakes\mapper\ImageMapper.class
 com\bespoke\bakes\repository\QuoteRequestRepository.class
 com\bespoke\bakes\controller\UserController.class
 com\bespoke\bakes\repository\RolePermissionRepository.class
@@ -50,3 +56,4 @@ com\bespoke\bakes\config\SwaggerConfig.class
 com\bespoke\bakes\service\UserCredentialService.class
 com\bespoke\bakes\service\QuoteRequestService.class
 com\bespoke\bakes\service\QuoteResponseService.class
+com\bespoke\bakes\controller\LoginController.class

@@ -14,7 +14,7 @@ public class RolePermission implements Serializable {
     private Long roleId;
     @Column(name = "permission_id")
     private Long permissionId;
-    @Column(name = "is_active")
+    @Column(name = "is_active", insertable = false)
     private boolean isActive;
 
     public RolePermission() {

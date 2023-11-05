@@ -1,6 +1,8 @@
 package com.bespoke.bakes.controller;
 
 import com.bespoke.bakes.domain.Image;
+import com.bespoke.bakes.domain.enums.ImageType;
+import com.bespoke.bakes.domain.request.CreateImageRequest;
 import com.bespoke.bakes.service.ImageService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -17,8 +19,8 @@ public class ImageController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Image createBundle(@RequestBody Image image) {
-        return imageService.createImage(image);
+    public Image createImage(@RequestBody CreateImageRequest createImageRequest) {
+        return imageService.createImage(createImageRequest);
     }
 
     @GetMapping
@@ -29,5 +31,11 @@ public class ImageController {
     @GetMapping("/{id}")
     public Image getImageById(@PathVariable("id") Long id) {
         return imageService.findImageById(id);
+    }
+
+    @GetMapping("/type/{imageType}/id/{id}")
+    public Image getImageByTypeAndId(@PathVariable("imageType") ImageType imageType,
+                                     @PathVariable("id") Long id) {
+        return imageService.findImageByTypeAndId(imageType, id);
     }
 }

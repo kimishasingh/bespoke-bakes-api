@@ -16,7 +16,7 @@ public class UserCredential implements Serializable {
     private String username;
     @Column(name = "password")
     private String password;
-    @Column(name = "is_active")
+    @Column(name = "is_active", insertable = false)
     private boolean isActive;
 
     public UserCredential() {

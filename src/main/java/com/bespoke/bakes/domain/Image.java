@@ -9,21 +9,20 @@ public class Image implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
     private Long id;
-    @Column(name = "image")
-    private Blob image;
-    @Column(name = "quote_request_id")
-    private Long quoteRequestId;
-    @Column(name = "is_active")
+    private byte[] image;
+    private Long matchingId;
+    private String imageType;
+    @Column(name = "is_active", insertable = false)
     private boolean isActive;
 
     public Image() {
     }
 
-    public Image(Blob image, Long quoteRequestId, boolean isActive) {
+    public Image(byte[] image, Long matchingId, String imageType, boolean isActive) {
         this.image = image;
-        this.quoteRequestId = quoteRequestId;
+        this.matchingId = matchingId;
+        this.imageType = imageType;
         this.isActive = isActive;
     }
 
@@ -35,20 +34,28 @@ public class Image implements Serializable {
         this.id = id;
     }
 
-    public Blob getImage() {
+    public byte[] getImage() {
         return image;
     }
 
-    public void setImage(Blob image) {
+    public void setImage(byte[] image) {
         this.image = image;
     }
 
-    public Long getQuoteRequestId() {
-        return quoteRequestId;
+    public Long getMatchingId() {
+        return matchingId;
     }
 
-    public void setQuoteRequestId(Long quoteRequestId) {
-        this.quoteRequestId = quoteRequestId;
+    public void setMatchingId(Long matchingId) {
+        this.matchingId = matchingId;
+    }
+
+    public String getImageType() {
+        return imageType;
+    }
+
+    public void setImageType(String imageType) {
+        this.imageType = imageType;
     }
 
     public boolean isActive() {

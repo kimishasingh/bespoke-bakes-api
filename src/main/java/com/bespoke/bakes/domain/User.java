@@ -18,7 +18,7 @@ public class User implements Serializable {
     private String mobileNumber;
     @Column(name = "email_address")
     private String emailAddress;
-    @Column(name = "is_active")
+    @Column(name = "is_active", insertable = false)
     private boolean isActive = true;
 
     public User() {

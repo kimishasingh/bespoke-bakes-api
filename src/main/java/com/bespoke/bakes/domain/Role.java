@@ -12,7 +12,7 @@ public class Role implements Serializable {
     private Long id;
     @Column(name = "name")
     private String name;
-    @Column(name = "is_active")
+    @Column(name = "is_active", insertable = false)
     private boolean isActive;
 
     public Role() {

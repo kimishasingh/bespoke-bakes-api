@@ -1,6 +1,5 @@
 package com.bespoke.bakes.repository;
 
-import com.bespoke.bakes.domain.UserCredential;
 import com.bespoke.bakes.domain.UserRole;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
