@@ -1,5 +1,7 @@
 package com.bespoke.bakes.domain.request;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 
 public class CreateQuoteRequest {
@@ -16,6 +18,7 @@ public class CreateQuoteRequest {
     private String description;
     private Long quantity;
     private String genderIndicator;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss.sss")
     private Date dateTimeRequired;
     private Float locationLongitude;
     private Float locationLatitude;

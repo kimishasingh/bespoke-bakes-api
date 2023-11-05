@@ -1,11 +1,13 @@
 package com.bespoke.bakes.domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.io.Serializable;
-import java.sql.Date;
+import java.sql.Timestamp;
 
 @Entity(name = "quote_request_tbl")
 public class QuoteRequest implements Serializable {
@@ -25,7 +27,8 @@ public class QuoteRequest implements Serializable {
     private String description;
     private Long quantity;
     private String genderIndicator;
-    private Date dateTimeRequired;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss.sss")
+    private Timestamp dateTimeRequired;
     private Float locationLongitude;
     private Float locationLatitude;
     private String deliveryOption;
@@ -36,7 +39,7 @@ public class QuoteRequest implements Serializable {
     public QuoteRequest() {
     }
 
-    public QuoteRequest(Long id, Long bundleId, String occasion, String itemType, String cakeFlavour, String icingType, String icingFlavour, String icingColour, String cakeSize, Long noOfTiers, String description, Long quantity, String genderIndicator, Date dateTimeRequired, Float locationLongitude, Float locationLatitude, String deliveryOption, String budget, String additionalInfo, boolean isActive) {
+    public QuoteRequest(Long id, Long bundleId, String occasion, String itemType, String cakeFlavour, String icingType, String icingFlavour, String icingColour, String cakeSize, Long noOfTiers, String description, Long quantity, String genderIndicator, Timestamp dateTimeRequired, Float locationLongitude, Float locationLatitude, String deliveryOption, String budget, String additionalInfo, boolean isActive) {
         this.id = id;
         this.bundleId = bundleId;
         this.occasion = occasion;
@@ -163,11 +166,11 @@ public class QuoteRequest implements Serializable {
         this.genderIndicator = genderIndicator;
     }
 
-    public Date getDateTimeRequired() {
+    public Timestamp getDateTimeRequired() {
         return dateTimeRequired;
     }
 
-    public void setDateTimeRequired(Date dateTimeRequired) {
+    public void setDateTimeRequired(Timestamp dateTimeRequired) {
         this.dateTimeRequired = dateTimeRequired;
     }
 

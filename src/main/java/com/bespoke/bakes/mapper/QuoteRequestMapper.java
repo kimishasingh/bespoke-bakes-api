@@ -4,7 +4,7 @@ import com.bespoke.bakes.domain.QuoteRequest;
 import com.bespoke.bakes.domain.request.CreateQuoteRequest;
 import org.springframework.stereotype.Component;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 
 @Component
 public class QuoteRequestMapper {
@@ -23,7 +23,7 @@ public class QuoteRequestMapper {
         quoteRequest.setDescription(createQuoteRequest.getDescription());
         quoteRequest.setQuantity(createQuoteRequest.getQuantity());
         quoteRequest.setGenderIndicator(createQuoteRequest.getGenderIndicator() != null ? createQuoteRequest.getGenderIndicator() : null);
-        quoteRequest.setDateTimeRequired(new Date(createQuoteRequest.getDateTimeRequired().getTime()));
+        quoteRequest.setDateTimeRequired(new Timestamp(createQuoteRequest.getDateTimeRequired().getTime()));
         quoteRequest.setLocationLongitude(createQuoteRequest.getLocationLongitude());
         quoteRequest.setLocationLatitude(createQuoteRequest.getLocationLatitude());
         quoteRequest.setDeliveryOption(createQuoteRequest.getDeliveryOption());
