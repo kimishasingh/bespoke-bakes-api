@@ -22,19 +22,22 @@ public class QuoteResponse implements Serializable {
     private Long discountAppliedPercentage;
     @Column(name = "quote_accepted")
     private boolean quoteAccepted;
-    @Column(name = "is_active")
+    @Column(name = "user_id")
+    private Long userId;
+    @Column(name = "is_active", insertable = false)
     private boolean isActive;
 
     public QuoteResponse() {
     }
 
-    public QuoteResponse(Long bundleId, Long quoteRequestId, Long bundleTotal, Long quoteRequestTotal, Long discountAppliedPercentage, boolean quoteAccepted, boolean isActive) {
+    public QuoteResponse(Long bundleId, Long quoteRequestId, Long bundleTotal, Long quoteRequestTotal, Long discountAppliedPercentage, boolean quoteAccepted, Long userId, boolean isActive) {
         this.bundleId = bundleId;
         this.quoteRequestId = quoteRequestId;
         this.bundleTotal = bundleTotal;
         this.quoteRequestTotal = quoteRequestTotal;
         this.discountAppliedPercentage = discountAppliedPercentage;
         this.quoteAccepted = quoteAccepted;
+        this.userId = userId;
         this.isActive = isActive;
     }
 
@@ -100,5 +103,13 @@ public class QuoteResponse implements Serializable {
 
     public void setActive(boolean active) {
         isActive = active;
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 }
