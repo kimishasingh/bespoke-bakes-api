@@ -2,23 +2,31 @@ package com.bespoke.bakes.service;
 
 import com.bespoke.bakes.domain.Bundle;
 import com.bespoke.bakes.domain.QuoteRequest;
+import com.bespoke.bakes.domain.QuoteResponse;
+import com.bespoke.bakes.domain.request.AcceptedQuoteRequest;
 import com.bespoke.bakes.domain.request.CreateQuoteRequest;
 import com.bespoke.bakes.mapper.QuoteRequestMapper;
 import com.bespoke.bakes.repository.QuoteRequestRepository;
+import com.bespoke.bakes.repository.QuoteResponseRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Service
 public class QuoteRequestService {
 
     private final QuoteRequestRepository quoteRequestRepository;
+    private final QuoteResponseRepository quoteResponseRepository;
     private final BundleService bundleService;
 
     public QuoteRequestService(QuoteRequestRepository quoteRequestRepository,
+                               QuoteResponseRepository quoteResponseRepository,
                                BundleService bundleService) {
         this.quoteRequestRepository = quoteRequestRepository;
-        this.bundleService= bundleService;
+        this.quoteResponseRepository = quoteResponseRepository;
+        this.bundleService = bundleService;
     }
 
     public QuoteRequest createQuoteRequest(CreateQuoteRequest createQuoteRequest) {
@@ -36,5 +44,19 @@ public class QuoteRequestService {
     public QuoteRequest findQuoteRequestById(Long id) {
         Optional<QuoteRequest> quoteRequest = quoteRequestRepository.findById(id);
         return quoteRequest.orElse(null);
+    }
+
+    public List<AcceptedQuoteRequest> findAcceptedQuoteRequestsByUserId(Long userId) {
+        List<AcceptedQuoteRequest> acceptedQuoteRequests = new ArrayList<>();
+
+        List<QuoteRequest> allQuoteRequests = quoteRequestRepository.findByUserId(userId);
+        allQuoteRequests.forEach(quoteRequest -> {
+            Optional<QuoteResponse> acceptedQuoteResponse = quoteResponseRepository.findAcceptedQuoteResponse(quoteRequest.getId());
+            if (acceptedQuoteResponse.isPresent()) {
+                AcceptedQuoteRequest acceptedQuoteRequest = new AcceptedQuoteRequest(quoteRequest, acceptedQuoteResponse.get());
+                acceptedQuoteRequests.add(acceptedQuoteRequest);
+            }
+        });
+        return acceptedQuoteRequests;
     }
 }
