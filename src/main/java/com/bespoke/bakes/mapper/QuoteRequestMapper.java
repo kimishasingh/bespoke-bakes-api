@@ -29,6 +29,7 @@ public class QuoteRequestMapper {
         quoteRequest.setDeliveryOption(createQuoteRequest.getDeliveryOption());
         quoteRequest.setBudget(createQuoteRequest.getBudget());
         quoteRequest.setAdditionalInfo(createQuoteRequest.getAdditionalInfo());
+        quoteRequest.setLocationId(createQuoteRequest.getLocationId());
         return quoteRequest;
     }
 }

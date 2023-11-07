@@ -28,13 +28,14 @@ public class QuoteRequest implements Serializable {
     private String deliveryOption;
     private String budget;
     private String additionalInfo;
-    @Column(name="is_active", insertable = false)
+    private Long locationId;
+    @Column(name = "is_active", insertable = false)
     private boolean isActive;
 
     public QuoteRequest() {
     }
 
-    public QuoteRequest(Long id, Long bundleId, String occasion, String itemType, String cakeFlavour, String icingType, String icingFlavour, String icingColour, String cakeSize, Long noOfTiers, String description, Long quantity, String genderIndicator, Timestamp dateTimeRequired, Float locationLongitude, Float locationLatitude, String deliveryOption, String budget, String additionalInfo, boolean isActive) {
+    public QuoteRequest(Long id, Long bundleId, String occasion, String itemType, String cakeFlavour, String icingType, String icingFlavour, String icingColour, String cakeSize, Long noOfTiers, String description, Long quantity, String genderIndicator, Timestamp dateTimeRequired, Float locationLongitude, Float locationLatitude, String deliveryOption, String budget, String additionalInfo, Long locationId, boolean isActive) {
         this.id = id;
         this.bundleId = bundleId;
         this.occasion = occasion;
@@ -54,6 +55,7 @@ public class QuoteRequest implements Serializable {
         this.deliveryOption = deliveryOption;
         this.budget = budget;
         this.additionalInfo = additionalInfo;
+        this.locationId = locationId;
         this.isActive = isActive;
     }
 
@@ -207,6 +209,14 @@ public class QuoteRequest implements Serializable {
 
     public void setAdditionalInfo(String additionalInfo) {
         this.additionalInfo = additionalInfo;
+    }
+
+    public Long getLocationId() {
+        return locationId;
+    }
+
+    public void setLocationId(Long locationId) {
+        this.locationId = locationId;
     }
 
     public boolean isActive() {
