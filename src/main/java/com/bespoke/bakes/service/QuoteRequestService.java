@@ -5,6 +5,7 @@ import com.bespoke.bakes.domain.QuoteRequest;
 import com.bespoke.bakes.domain.QuoteResponse;
 import com.bespoke.bakes.domain.request.AcceptedQuoteRequest;
 import com.bespoke.bakes.domain.request.CreateQuoteRequest;
+import com.bespoke.bakes.domain.request.QuoteRequestDTO;
 import com.bespoke.bakes.mapper.QuoteRequestMapper;
 import com.bespoke.bakes.repository.QuoteRequestRepository;
 import com.bespoke.bakes.repository.QuoteResponseRepository;
@@ -58,5 +59,16 @@ public class QuoteRequestService {
             }
         });
         return acceptedQuoteRequests;
+    }
+
+    public List<QuoteRequestDTO> findAllQuoteRequestsByUserId(Long userId) {
+        List<QuoteRequestDTO> allQuoteRequestsDTO = new ArrayList<>();
+
+        List<QuoteRequest> allQuoteRequests = quoteRequestRepository.findByUserId(userId);
+        allQuoteRequests.forEach(quoteRequest -> {
+            List<QuoteResponse> quoteResponses = quoteResponseRepository.findByQuoteRequestId(quoteRequest.getId());
+            allQuoteRequestsDTO.add(QuoteRequestMapper.toQuoteRequestDTO(quoteRequest, userId, quoteResponses));
+        });
+        return allQuoteRequestsDTO;
     }
 }

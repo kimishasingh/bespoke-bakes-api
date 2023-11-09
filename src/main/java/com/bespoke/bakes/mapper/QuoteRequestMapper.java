@@ -1,10 +1,13 @@
 package com.bespoke.bakes.mapper;
 
 import com.bespoke.bakes.domain.QuoteRequest;
+import com.bespoke.bakes.domain.QuoteResponse;
 import com.bespoke.bakes.domain.request.CreateQuoteRequest;
+import com.bespoke.bakes.domain.request.QuoteRequestDTO;
 import org.springframework.stereotype.Component;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 @Component
 public class QuoteRequestMapper {
@@ -31,5 +34,31 @@ public class QuoteRequestMapper {
         quoteRequest.setAdditionalInfo(createQuoteRequest.getAdditionalInfo());
         quoteRequest.setLocationId(createQuoteRequest.getLocationId());
         return quoteRequest;
+    }
+
+    public static QuoteRequestDTO toQuoteRequestDTO(QuoteRequest quoteRequest, Long userId, List<QuoteResponse> responses) {
+        QuoteRequestDTO quoteRequestDTO = new QuoteRequestDTO();
+        quoteRequestDTO.setBundleId(quoteRequest.getBundleId());
+        quoteRequestDTO.setOccasion(quoteRequest.getOccasion());
+        quoteRequestDTO.setItemType(quoteRequest.getItemType());
+        quoteRequestDTO.setCakeFlavour(quoteRequest.getCakeFlavour());
+        quoteRequestDTO.setIcingType(quoteRequest.getIcingType());
+        quoteRequestDTO.setIcingFlavour(quoteRequest.getIcingFlavour());
+        quoteRequestDTO.setIcingColour(quoteRequest.getIcingColour());
+        quoteRequestDTO.setCakeSize(quoteRequest.getCakeSize());
+        quoteRequestDTO.setNoOfTiers(quoteRequest.getNoOfTiers());
+        quoteRequestDTO.setDescription(quoteRequest.getDescription());
+        quoteRequestDTO.setQuantity(quoteRequest.getQuantity());
+        quoteRequestDTO.setGenderIndicator(quoteRequest.getGenderIndicator());
+        quoteRequestDTO.setDateTimeRequired(new Timestamp(quoteRequest.getDateTimeRequired().getTime()));
+        quoteRequestDTO.setLocationLongitude(quoteRequest.getLocationLongitude());
+        quoteRequestDTO.setLocationLatitude(quoteRequest.getLocationLatitude());
+        quoteRequestDTO.setDeliveryOption(quoteRequest.getDeliveryOption());
+        quoteRequestDTO.setBudget(quoteRequest.getBudget());
+        quoteRequestDTO.setAdditionalInfo(quoteRequest.getAdditionalInfo());
+        quoteRequestDTO.setLocationId(quoteRequest.getLocationId());
+        quoteRequestDTO.setQuoteResponses(responses);
+        quoteRequestDTO.setUserId(userId);
+        return quoteRequestDTO;
     }
 }

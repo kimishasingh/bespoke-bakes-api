@@ -3,6 +3,7 @@ package com.bespoke.bakes.controller;
 import com.bespoke.bakes.domain.QuoteRequest;
 import com.bespoke.bakes.domain.request.AcceptedQuoteRequest;
 import com.bespoke.bakes.domain.request.CreateQuoteRequest;
+import com.bespoke.bakes.domain.request.QuoteRequestDTO;
 import com.bespoke.bakes.service.QuoteRequestService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -38,5 +39,10 @@ public class QuoteRequestController {
     @GetMapping("/accepted")
     public List<AcceptedQuoteRequest> getAcceptedQuoteRequests(@RequestParam("userId") Long userId) {
         return quoteRequestService.findAcceptedQuoteRequestsByUserId(userId);
+    }
+
+    @GetMapping("/user/{userId}")
+    public List<QuoteRequestDTO> getAllQuoteRequestsForUser(@PathVariable("userId") Long userId) {
+        return quoteRequestService.findAllQuoteRequestsByUserId(userId);
     }
 }
