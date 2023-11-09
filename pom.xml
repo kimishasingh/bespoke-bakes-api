@@ -10,11 +10,11 @@
 	</parent>
 	<groupId>com.bespoke</groupId>
 	<artifactId>bakes</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<name>bakes</name>
 	<description>Bespoke Bakes REST API</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
