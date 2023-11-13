@@ -19,6 +19,10 @@ public class QuoteResponseService {
         return quoteResponseRepository.save(quoteResponse);
     }
 
+    public QuoteResponse updateQuoteResponse(QuoteResponse quoteResponse) {
+        return quoteResponseRepository.save(quoteResponse);
+    }
+
     public Iterable<QuoteResponse> getAllQuoteResponses() {
         return quoteResponseRepository.findAll();
     }

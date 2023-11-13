@@ -21,6 +21,11 @@ public class QuoteResponseController {
         return quoteResponseService.createQuoteResponse(quoteResponse);
     }
 
+    @PutMapping
+    public QuoteResponse updateQuoteResponse(@RequestBody QuoteResponse quoteResponse) {
+        return quoteResponseService.updateQuoteResponse(quoteResponse);
+    }
+
     @GetMapping
     public Iterable<QuoteResponse> getQuoteResponses() {
         return quoteResponseService.getAllQuoteResponses();
