@@ -22,12 +22,13 @@ public class CreateQuoteRequest {
     private String deliveryOption;
     private String budget;
     private Long locationId;
+    private String nickname;
     private String additionalInfo;
 
     public CreateQuoteRequest() {
     }
 
-    public CreateQuoteRequest(Long userId, Long bundleId, String occasion, String itemType, String cakeFlavour, String icingType, String icingFlavour, String icingColour, String cakeSize, Long noOfTiers, String description, Long quantity, String genderIndicator, Date dateTimeRequired, Float locationLongitude, Float locationLatitude, String deliveryOption, String budget, String additionalInfo, Long locationId) {
+    public CreateQuoteRequest(Long userId, Long bundleId, String occasion, String itemType, String cakeFlavour, String icingType, String icingFlavour, String icingColour, String cakeSize, Long noOfTiers, String description, Long quantity, String genderIndicator, Date dateTimeRequired, Float locationLongitude, Float locationLatitude, String deliveryOption, String budget, String additionalInfo, Long locationId, String nickname) {
         this.userId = userId;
         this.bundleId = bundleId;
         this.occasion = occasion;
@@ -48,6 +49,7 @@ public class CreateQuoteRequest {
         this.budget = budget;
         this.additionalInfo = additionalInfo;
         this.locationId = locationId;
+        this.nickname = nickname;
     }
 
     public Long getUserId() {
@@ -208,5 +210,13 @@ public class CreateQuoteRequest {
 
     public void setLocationId(Long locationId) {
         this.locationId = locationId;
+    }
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
     }
 }

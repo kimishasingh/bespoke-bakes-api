@@ -33,6 +33,7 @@ public class QuoteRequestMapper {
         quoteRequest.setBudget(createQuoteRequest.getBudget());
         quoteRequest.setAdditionalInfo(createQuoteRequest.getAdditionalInfo());
         quoteRequest.setLocationId(createQuoteRequest.getLocationId());
+        quoteRequest.setNickname(createQuoteRequest.getNickname());
         return quoteRequest;
     }
 
@@ -57,6 +58,7 @@ public class QuoteRequestMapper {
         quoteRequestDTO.setBudget(quoteRequest.getBudget());
         quoteRequestDTO.setAdditionalInfo(quoteRequest.getAdditionalInfo());
         quoteRequestDTO.setLocationId(quoteRequest.getLocationId());
+        quoteRequestDTO.setNickname(quoteRequest.getNickname());
         quoteRequestDTO.setQuoteResponses(responses);
         quoteRequestDTO.setUserId(userId);
         return quoteRequestDTO;

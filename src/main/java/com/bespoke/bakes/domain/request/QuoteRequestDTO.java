@@ -26,13 +26,14 @@ public class QuoteRequestDTO {
     private String budget;
     private Long locationId;
     private String additionalInfo;
+    private String nickname;
 
     private List<QuoteResponse> quoteResponses;
 
     public QuoteRequestDTO() {
     }
 
-    public QuoteRequestDTO(Long userId, Long bundleId, String occasion, String itemType, String cakeFlavour, String icingType, String icingFlavour, String icingColour, String cakeSize, Long noOfTiers, String description, Long quantity, String genderIndicator, Date dateTimeRequired, Float locationLongitude, Float locationLatitude, String deliveryOption, String budget, String additionalInfo, Long locationId, List<QuoteResponse> quoteResponses) {
+    public QuoteRequestDTO(Long userId, Long bundleId, String occasion, String itemType, String cakeFlavour, String icingType, String icingFlavour, String icingColour, String cakeSize, Long noOfTiers, String description, Long quantity, String genderIndicator, Date dateTimeRequired, Float locationLongitude, Float locationLatitude, String deliveryOption, String budget, String additionalInfo, Long locationId, String nickname, List<QuoteResponse> quoteResponses) {
         this.userId = userId;
         this.bundleId = bundleId;
         this.occasion = occasion;
@@ -53,6 +54,7 @@ public class QuoteRequestDTO {
         this.budget = budget;
         this.additionalInfo = additionalInfo;
         this.locationId = locationId;
+        this.nickname = nickname;
         this.quoteResponses = quoteResponses;
     }
 
@@ -214,6 +216,14 @@ public class QuoteRequestDTO {
 
     public void setLocationId(Long locationId) {
         this.locationId = locationId;
+    }
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
     }
 
     public List<QuoteResponse> getQuoteResponses() {

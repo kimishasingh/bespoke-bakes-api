@@ -29,13 +29,14 @@ public class QuoteRequest implements Serializable {
     private String budget;
     private String additionalInfo;
     private Long locationId;
+    private String nickname;
     @Column(name = "is_active", insertable = false)
     private boolean isActive;
 
     public QuoteRequest() {
     }
 
-    public QuoteRequest(Long id, Long bundleId, String occasion, String itemType, String cakeFlavour, String icingType, String icingFlavour, String icingColour, String cakeSize, Long noOfTiers, String description, Long quantity, String genderIndicator, Timestamp dateTimeRequired, Float locationLongitude, Float locationLatitude, String deliveryOption, String budget, String additionalInfo, Long locationId, boolean isActive) {
+    public QuoteRequest(Long id, Long bundleId, String occasion, String itemType, String cakeFlavour, String icingType, String icingFlavour, String icingColour, String cakeSize, Long noOfTiers, String description, Long quantity, String genderIndicator, Timestamp dateTimeRequired, Float locationLongitude, Float locationLatitude, String deliveryOption, String budget, String additionalInfo, Long locationId, String nickname, boolean isActive) {
         this.id = id;
         this.bundleId = bundleId;
         this.occasion = occasion;
@@ -56,6 +57,7 @@ public class QuoteRequest implements Serializable {
         this.budget = budget;
         this.additionalInfo = additionalInfo;
         this.locationId = locationId;
+        this.nickname = nickname;
         this.isActive = isActive;
     }
 
@@ -217,6 +219,14 @@ public class QuoteRequest implements Serializable {
 
     public void setLocationId(Long locationId) {
         this.locationId = locationId;
+    }
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
     }
 
     public boolean isActive() {
