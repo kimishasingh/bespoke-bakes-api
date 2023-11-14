@@ -1,12 +1,12 @@
-package com.bespoke.bakes.domain.request;
+package com.bespoke.bakes.domain.dto;
 
-import com.bespoke.bakes.domain.QuoteResponse;
+import com.bespoke.bakes.domain.User;
 
 import java.util.Date;
 import java.util.List;
 
 public class QuoteRequestDTO {
-    private Long userId;
+    private User buyer;
     private Long bundleId;
     private String occasion;
     private String itemType;
@@ -28,13 +28,13 @@ public class QuoteRequestDTO {
     private String additionalInfo;
     private String nickname;
 
-    private List<QuoteResponse> quoteResponses;
+    private List<QuoteResponseDTO> quoteResponses;
 
     public QuoteRequestDTO() {
     }
 
-    public QuoteRequestDTO(Long userId, Long bundleId, String occasion, String itemType, String cakeFlavour, String icingType, String icingFlavour, String icingColour, String cakeSize, Long noOfTiers, String description, Long quantity, String genderIndicator, Date dateTimeRequired, Float locationLongitude, Float locationLatitude, String deliveryOption, String budget, String additionalInfo, Long locationId, String nickname, List<QuoteResponse> quoteResponses) {
-        this.userId = userId;
+    public QuoteRequestDTO(User buyer, Long bundleId, String occasion, String itemType, String cakeFlavour, String icingType, String icingFlavour, String icingColour, String cakeSize, Long noOfTiers, String description, Long quantity, String genderIndicator, Date dateTimeRequired, Float locationLongitude, Float locationLatitude, String deliveryOption, String budget, String additionalInfo, Long locationId, String nickname, List<QuoteResponseDTO> quoteResponses) {
+        this.buyer = buyer;
         this.bundleId = bundleId;
         this.occasion = occasion;
         this.itemType = itemType;
@@ -58,12 +58,12 @@ public class QuoteRequestDTO {
         this.quoteResponses = quoteResponses;
     }
 
-    public Long getUserId() {
-        return userId;
+    public User getBuyer() {
+        return buyer;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
+    public void setBuyer(User buyer) {
+        this.buyer = buyer;
     }
 
     public Long getBundleId() {
@@ -226,11 +226,11 @@ public class QuoteRequestDTO {
         this.nickname = nickname;
     }
 
-    public List<QuoteResponse> getQuoteResponses() {
+    public List<QuoteResponseDTO> getQuoteResponses() {
         return quoteResponses;
     }
 
-    public void setQuoteResponses(List<QuoteResponse> quoteResponses) {
+    public void setQuoteResponses(List<QuoteResponseDTO> quoteResponses) {
         this.quoteResponses = quoteResponses;
     }
 }

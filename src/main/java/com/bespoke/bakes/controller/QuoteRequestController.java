@@ -3,7 +3,7 @@ package com.bespoke.bakes.controller;
 import com.bespoke.bakes.domain.QuoteRequest;
 import com.bespoke.bakes.domain.request.AcceptedQuoteRequest;
 import com.bespoke.bakes.domain.request.CreateQuoteRequest;
-import com.bespoke.bakes.domain.request.QuoteRequestDTO;
+import com.bespoke.bakes.domain.dto.QuoteRequestDTO;
 import com.bespoke.bakes.service.QuoteRequestService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
