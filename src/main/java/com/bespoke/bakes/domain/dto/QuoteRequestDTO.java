@@ -7,6 +7,7 @@ import java.util.List;
 
 public class QuoteRequestDTO {
     private User buyer;
+    private Long id;
     private Long bundleId;
     private String occasion;
     private String itemType;
@@ -33,7 +34,8 @@ public class QuoteRequestDTO {
     public QuoteRequestDTO() {
     }
 
-    public QuoteRequestDTO(User buyer, Long bundleId, String occasion, String itemType, String cakeFlavour, String icingType, String icingFlavour, String icingColour, String cakeSize, Long noOfTiers, String description, Long quantity, String genderIndicator, Date dateTimeRequired, Float locationLongitude, Float locationLatitude, String deliveryOption, String budget, String additionalInfo, Long locationId, String nickname, List<QuoteResponseDTO> quoteResponses) {
+    public QuoteRequestDTO(Long id, User buyer, Long bundleId, String occasion, String itemType, String cakeFlavour, String icingType, String icingFlavour, String icingColour, String cakeSize, Long noOfTiers, String description, Long quantity, String genderIndicator, Date dateTimeRequired, Float locationLongitude, Float locationLatitude, String deliveryOption, String budget, String additionalInfo, Long locationId, String nickname, List<QuoteResponseDTO> quoteResponses) {
+        this.id = id;
         this.buyer = buyer;
         this.bundleId = bundleId;
         this.occasion = occasion;
@@ -56,6 +58,14 @@ public class QuoteRequestDTO {
         this.locationId = locationId;
         this.nickname = nickname;
         this.quoteResponses = quoteResponses;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public User getBuyer() {

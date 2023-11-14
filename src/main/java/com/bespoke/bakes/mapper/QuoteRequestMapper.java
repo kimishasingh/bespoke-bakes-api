@@ -2,9 +2,9 @@ package com.bespoke.bakes.mapper;
 
 import com.bespoke.bakes.domain.QuoteRequest;
 import com.bespoke.bakes.domain.User;
+import com.bespoke.bakes.domain.dto.QuoteRequestDTO;
 import com.bespoke.bakes.domain.dto.QuoteResponseDTO;
 import com.bespoke.bakes.domain.request.CreateQuoteRequest;
-import com.bespoke.bakes.domain.dto.QuoteRequestDTO;
 import org.springframework.stereotype.Component;
 
 import java.sql.Timestamp;
@@ -40,6 +40,7 @@ public class QuoteRequestMapper {
 
     public static QuoteRequestDTO toQuoteRequestDTO(QuoteRequest quoteRequest, User user, List<QuoteResponseDTO> responses) {
         QuoteRequestDTO quoteRequestDTO = new QuoteRequestDTO();
+        quoteRequestDTO.setId(quoteRequest.getId());
         quoteRequestDTO.setBundleId(quoteRequest.getBundleId());
         quoteRequestDTO.setOccasion(quoteRequest.getOccasion());
         quoteRequestDTO.setItemType(quoteRequest.getItemType());
