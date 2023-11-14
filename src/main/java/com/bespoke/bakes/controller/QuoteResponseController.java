@@ -1,9 +1,12 @@
 package com.bespoke.bakes.controller;
 
 import com.bespoke.bakes.domain.QuoteResponse;
+import com.bespoke.bakes.domain.dto.QuoteResponseWithQuoteRequest;
 import com.bespoke.bakes.service.QuoteResponseService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/admin/quote-response")
@@ -26,9 +29,14 @@ public class QuoteResponseController {
         return quoteResponseService.updateQuoteResponse(quoteResponse);
     }
 
+//    @GetMapping
+//    public Iterable<QuoteResponse> getQuoteResponses() {
+//        return quoteResponseService.getAllQuoteResponses();
+//    }
+
     @GetMapping
-    public Iterable<QuoteResponse> getQuoteResponses() {
-        return quoteResponseService.getAllQuoteResponses();
+    public List<QuoteResponseWithQuoteRequest> getQuoteResponses() {
+        return quoteResponseService.getAllQuoteResponsesWithQuoteRequest();
     }
 
     @GetMapping("/{id}")
