@@ -1,6 +1,7 @@
 package com.bespoke.bakes.service;
 
 import com.bespoke.bakes.domain.Image;
+import com.bespoke.bakes.domain.dto.ImageDTO;
 import com.bespoke.bakes.domain.enums.ImageType;
 import com.bespoke.bakes.domain.request.CreateImageRequest;
 import com.bespoke.bakes.mapper.ImageMapper;
@@ -34,10 +35,10 @@ public class ImageService {
         return image.orElse(null);
     }
 
-    public Image findImageByTypeAndId(ImageType imageType, Long id) {
+    public ImageDTO findImageByTypeAndId(ImageType imageType, Long id) {
         List<Image> images = imageRepository.findByImageTypeAndMatchingId(imageType.getDescription(), id);
         if (!CollectionUtils.isEmpty(images)) {
-            return images.get(0);
+            return ImageMapper.toImageDTO(images.get(0));
         }
         return null;
     }

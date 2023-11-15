@@ -1,6 +1,7 @@
 package com.bespoke.bakes.controller;
 
 import com.bespoke.bakes.domain.Image;
+import com.bespoke.bakes.domain.dto.ImageDTO;
 import com.bespoke.bakes.domain.enums.ImageType;
 import com.bespoke.bakes.domain.request.CreateImageRequest;
 import com.bespoke.bakes.service.ImageService;
@@ -34,8 +35,8 @@ public class ImageController {
     }
 
     @GetMapping("/type/{imageType}/id/{id}")
-    public Image getImageByTypeAndId(@PathVariable("imageType") ImageType imageType,
-                                     @PathVariable("id") Long id) {
+    public ImageDTO getImageByTypeAndId(@PathVariable("imageType") ImageType imageType,
+                                        @PathVariable("id") Long id) {
         return imageService.findImageByTypeAndId(imageType, id);
     }
 }
